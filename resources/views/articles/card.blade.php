@@ -71,7 +71,7 @@
         :authorized="@json(Auth::check())"
         endpoint="{{ route('articles.like', ['article' => $article])}}"
         >
-      </article>
+      </article-like>
     </div>
   </div>
 </div>
