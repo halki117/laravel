@@ -36,7 +36,9 @@ class ArticleController extends Controller
         return redirect()->route('articles.index');
 
         $request->tags->each(function ($tagName) use ($article) {
+            // タグが既に登録されているかを調べる。登録されていればそのモデルを、登録されていなければテーブルに保存の上モデルを返す
             $tag = Tag::firstOrCreate(['name' => $tagName]);
+            // 記事とタグの紐付け(article_tagテーブルへの登録)が行われる
             $article->tags()->attach($tag);
         });
     }
