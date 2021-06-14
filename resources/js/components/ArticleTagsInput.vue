@@ -9,7 +9,7 @@
       v-model="tag"
       :tags="tags"
       :autocomplete-items="filteredItems"
-      aria-placeholder="タグを5個まで入力できます"
+      placeholder="タグを5個まで入力できます"
       @tags-changed="newTags => tags = newTags"
     />
   </div>
@@ -22,10 +22,16 @@ export default {
   components: {
     VueTagsInput,
   },
+  props: {
+    initialTags: {
+      type: Array,
+      default: [],
+    },
+  },
   data() {
     return {
       tag: '',
-      tags: [],
+      tags: this.initialTags,
       autocompleteItems: [{
         text: 'Spain',
       }, {
