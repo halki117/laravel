@@ -24,6 +24,8 @@ Route::prefix('articles')->name('articles.')->group(function(){
 
 });
 
+Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
+
 // prefixメソッド, nameメソッドによって下記の文が上記の様な記述に簡略化できる
 // Route::put('articles/{article}/like', 'ArticleController@like')->name('articles.like')->middleware('auth');
 // Route::delete('articles/{article}/like', 'ArticleController@unlike')->name('articles.unlike')->middleware('auth');
