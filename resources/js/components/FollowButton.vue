@@ -3,6 +3,7 @@
     <button
       class="btn-sm shadow-none boder boder-primary p-2"
       :class="buttonColor"
+      @click="clickFollow"
     >
       <i
         class="mr-1"
